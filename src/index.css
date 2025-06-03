@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Stormfaze";
+  src: url("./assets/fonts/Stormfaze.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  font-family: "Stormfaze", Arial, sans-serif;
+  font-weight: 400;
+
+  --background-color: #09122c;
+  --primary-color: #8affec;
+  --secondary-color: #f79009;
+
+  color: var(--primary-color);
+  background-color: var(--background-color);
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+}
+
+main {
+  padding: 2rem 3rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  padding: 0.25rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 2rrem 3rrem 0 3rrem;
+  display: flex;
+  column-gap: 2rrem 32px;
+  color: var(--secondary-color);
+}
+
+svg {
+  width: 1em;
+  height: 1em;
+  color: var(--secondary-color);
+}

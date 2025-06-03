@@ -1,0 +1,20 @@
+.button {
+  font-size: 1.5rem;
+  display: flex;
+  align-self: center;
+  column-gap: 0.25rem;
+  line-height: 2rem;
+
+  svg {
+    width: 1.25em;
+    height: 1.25em;
+  }
+}
+
+.arrow {
+  font-size: 1.5em;
+}
+
+.text {
+  padding-top: 0.1em;
+}
