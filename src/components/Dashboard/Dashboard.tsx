@@ -5,9 +5,8 @@ import {
   useFleetServiceGetMyShips,
   useFleetServicePostMyShipsByShipSymbolNegotiateContract,
 } from "../../../openapi/queries";
-import AgentSummary from "./AgentSummary/AgentSummary";
-import AvailableContract from "./AvailableContract/AvailableContract";
-import classes from "./Dashboard.module.css";
+import AgentSummary from "./AgentSummary";
+import AvailableContract from "./AvailableContract";
 
 const Dashboard = () => {
   const { data: agent, isLoading: agentLoading } = useAgentsServiceGetMyAgent();
@@ -27,16 +26,16 @@ const Dashboard = () => {
   return (
     <>
       {agentLoading || contractsLoading ? (
-        <div className={classes.loading}>Swapping time and space......</div>
-      ) : (
-        <div className={classes.dashboard}>
-          <main className={classes.main}>
-            {agent?.data && <AgentSummary agent={agent?.data} />}
-            {contracts?.data[0] && (
-              <AvailableContract contract={contracts?.data[0]} /> //API limits max contracts to 1
-            )}
-          </main>
+        <div className="flex justify-center items-center flex-1 text-4xl">
+          Swapping time and space......
         </div>
+      ) : (
+        <main className="flex flex-col gap-y-12">
+          {agent?.data && <AgentSummary agent={agent?.data} />}
+          {contracts?.data[0] && (
+            <AvailableContract contract={contracts?.data[0]} /> //API limits max contracts to 1
+          )}
+        </main>
       )}
     </>
   );

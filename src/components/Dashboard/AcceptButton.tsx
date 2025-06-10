@@ -1,5 +1,4 @@
-import { useContractsServicePostMyContractsByContractIdAccept } from "../../../../../openapi/queries";
-import classes from "./AcceptButton.module.css";
+import { useContractsServicePostMyContractsByContractIdAccept } from "../../../openapi/queries";
 
 interface AcceptButtonProps {
   contractId: string;
@@ -12,11 +11,11 @@ const AcceptButton = ({ contractId }: AcceptButtonProps) => {
   return (
     <button
       onClick={() => acceptContract({ contractId: contractId })}
-      className={classes.button}
+      className="flex self-center gap-x-1 text-2xl text-secondary"
     >
-      <span className={classes.arrow}>&#8920;</span>
-      <span className={classes.text}>Accept mission</span>
-      <span className={classes.arrow}> &#8921;</span>
+      <span className="text-3xl">&#8920;</span>
+      <span className="pt-1">Accept mission</span>
+      <span className="text-3xl"> &#8921;</span>
     </button>
   );
 };
