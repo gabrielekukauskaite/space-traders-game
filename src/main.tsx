@@ -15,7 +15,9 @@ OpenAPIConfig.HEADERS = {
 };
 
 const router = createRouter({ routeTree });
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: { queries: { staleTime: 300000 } },
+});
 
 setupFocusManager();
 
