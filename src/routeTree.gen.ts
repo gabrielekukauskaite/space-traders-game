@@ -11,14 +11,14 @@
 // Import Routes
 
 import { Route as rootRoute } from "./routes/__root";
-import { Route as StarmapImport } from "./routes/starmap";
+import { Route as NavigationImport } from "./routes/navigation";
 import { Route as IndexImport } from "./routes/index";
 
 // Create/Update Routes
 
-const StarmapRoute = StarmapImport.update({
-  id: "/starmap",
-  path: "/starmap",
+const NavigationRoute = NavigationImport.update({
+  id: "/navigation",
+  path: "/navigation",
   getParentRoute: () => rootRoute,
 } as any);
 
@@ -39,11 +39,11 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof IndexImport;
       parentRoute: typeof rootRoute;
     };
-    "/starmap": {
-      id: "/starmap";
-      path: "/starmap";
-      fullPath: "/starmap";
-      preLoaderRoute: typeof StarmapImport;
+    "/navigation": {
+      id: "/navigation";
+      path: "/navigation";
+      fullPath: "/navigation";
+      preLoaderRoute: typeof NavigationImport;
       parentRoute: typeof rootRoute;
     };
   }
@@ -53,37 +53,37 @@ declare module "@tanstack/react-router" {
 
 export interface FileRoutesByFullPath {
   "/": typeof IndexRoute;
-  "/starmap": typeof StarmapRoute;
+  "/navigation": typeof NavigationRoute;
 }
 
 export interface FileRoutesByTo {
   "/": typeof IndexRoute;
-  "/starmap": typeof StarmapRoute;
+  "/navigation": typeof NavigationRoute;
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute;
   "/": typeof IndexRoute;
-  "/starmap": typeof StarmapRoute;
+  "/navigation": typeof NavigationRoute;
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath;
-  fullPaths: "/" | "/starmap";
+  fullPaths: "/" | "/navigation";
   fileRoutesByTo: FileRoutesByTo;
-  to: "/" | "/starmap";
-  id: "__root__" | "/" | "/starmap";
+  to: "/" | "/navigation";
+  id: "__root__" | "/" | "/navigation";
   fileRoutesById: FileRoutesById;
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute;
-  StarmapRoute: typeof StarmapRoute;
+  NavigationRoute: typeof NavigationRoute;
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  StarmapRoute: StarmapRoute,
+  NavigationRoute: NavigationRoute,
 };
 
 export const routeTree = rootRoute
@@ -97,14 +97,14 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/starmap"
+        "/navigation"
       ]
     },
     "/": {
       "filePath": "index.tsx"
     },
-    "/starmap": {
-      "filePath": "starmap.tsx"
+    "/navigation": {
+      "filePath": "navigation.tsx"
     }
   }
 }
