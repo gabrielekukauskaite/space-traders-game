@@ -19,6 +19,8 @@ const Dashboard = () => {
   useEffect(() => {
     // If there are no contracts, send a request to get a new one
     if (ships?.data && contracts?.meta.total === 0) {
+      // TODO: For now just using the first ship in the list to generate a contract
+      // Later will want to be able to select which ship?
       getNewContract({ shipSymbol: ships?.data[0].symbol });
     }
   }, [contracts, ships]);

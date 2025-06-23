@@ -17,9 +17,9 @@ const NavigationBar = () => {
         activeProps={{
           className: classes.active,
         }}
-        to="/starmap"
+        to="/navigation"
       >
-        Starmap
+        Navigation
       </Link>
     </div>
   );
